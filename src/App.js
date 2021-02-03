@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { Jumbo } from './Components';
+import { Footer, Jumbo } from './Components';
 
 const Application = styled.div``;
 
@@ -8,6 +8,7 @@ const App = () => {
     return (
         <Application>
             <Jumbo />
+            <Footer />
         </Application>
     )
 }
