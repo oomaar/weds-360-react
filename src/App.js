@@ -1,11 +1,15 @@
 import React from 'react';
+import styled from "styled-components";
+import { Jumbo } from './Components';
+
+const Application = styled.div``;
 
 const App = () => {
     return (
-        <div>
-            <h1>Initial State</h1>
-        </div>
+        <Application>
+            <Jumbo />
+        </Application>
     )
 }
 
-export default App
+export default App;
