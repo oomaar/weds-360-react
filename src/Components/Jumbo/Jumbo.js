@@ -6,7 +6,6 @@ const Jumbo = () => {
     return (
         <Container>
             <Title>WEDDING PLANNING IS A PIECE OF CAKE WITH WEDS360. WE KNOW WHAT MATTERS MOST AND YOU CAN COUNT ON US EVERY STEP OF THE WAY.</Title>
-            {/*  */}
             <RowContainer>
                 <Row>
                     {jubmoData[0].top.map(jumboItem => (

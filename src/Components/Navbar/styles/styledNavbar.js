@@ -2,41 +2,67 @@ import styled from "styled-components";
 
 export const Navdiv = styled.div`
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: center;
+    margin: 30px 0;
+
+    @media (max-width: 1200px) {
+        /* laptop */
+    }
 
     @media (max-width: 990px) {
-        
+        /* small screens */
+    }
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        display: none;
     }
 `;
 
 export const Rightdiv = styled.div`
+     /* margin-left: auto; */
     display: flex;
-    align-items: center;
-    margin-left: auto;
-    height: 70px;
+    justify-content: space-around;
     align-self: center;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
+    flex: 0.4;
+    padding: 10px;
+`;
+
+export const Leftdiv = styled.div`
+    /* margin-right: auto; */
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    flex: 0.4;
+    padding: 10px;
+`;
+
+export const DropdownLink = styled.a`
+    padding: 15px;
+    border-bottom: 1px solid #000;
+    font-size: 12px;
+
+    &:last-child {
+        border: 0;
+    }
 `;
 
 export const Dropdown = styled.div`
     display: none;
     position: absolute;
-    top: 46px;
+    top: 31px;
     left: 0;
     text-align: center;
     width: 100px;
     background-color: #fff;
     box-shadow: 1px 1px 1px 1px #000;
-`;
 
-export const DropdownLink = styled.a`
-    margin: 10px 0;
-    border-bottom: 1px solid #000;
-
-    &:last-child {
-        border: 0;
+    ${DropdownLink} {
+      cursor: pointer;
     }
 `;
 
@@ -44,16 +70,10 @@ export const Navlink = styled.a`
     display: flex;
     align-items: center;
     position: relative;
-    margin: 5px 40px;
     text-transform: uppercase;
     font-family: lato,sans-serif;
-    font-size: 13.4px;
+    font-size: 12.4px;
     font-weight: 900;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
     text-decoration: none;
     cursor: pointer;
 
@@ -65,19 +85,40 @@ export const Navlink = styled.a`
     @media (max-width: 1200px) {
         font-size: 9px;
     }
+
+    @media (max-width: 990px) {
+        margin: 5px 20px;
+    }
 `;
 
 export const Logo = styled.img`
     width: 100px;
     margin: 20px;
+
+    @media (max-width: 990px) {
+        width: 80px;
+}
 `;
 
-export const Leftdiv = styled.div`
-    margin-right: auto;
-    display: flex;
-    align-items: center;
-    height: 70px;
-    align-self: center;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+export const ResponsiveNav = styled.div`
+    display: none;
+
+    ${Logo} {
+        width: 50px;
+    }
+
+    @media (max-width: 767px) {
+        display: flex;
+        justify-content: space-around;
+    }
+`;
+
+export const ResponsiveButton = styled.button`
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+
+    img {
+        width: 30px;
+    }
 `;

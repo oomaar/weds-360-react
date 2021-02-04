@@ -43,9 +43,6 @@ export const RowContainer = styled.div`
     @media (max-width: 750px) {
         flex-direction: column;
     }
-
-
-
 `;
 
 export const Row = styled.div`
@@ -69,7 +66,6 @@ export const Item = styled.div`
     @media (max-width: 770px) {
         width: 100%;
     }
-    
 `;
 
 export const Pane = styled.div`
