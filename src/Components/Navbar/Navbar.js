@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import {
-    Navdiv,
-    Rightdiv,
+    Container,
+    RightBox,
+    LeftBox,
+    DropdownLink,
+    Dropdown,
     Navlink,
     Logo,
-    Leftdiv,
-    Dropdown,
-    DropdownLink,
-    ResponsiveNav,
+    ResponsiveBox,
     ResponsiveButton,
-    Popdiv,
+    PopBox,
     Section,
-    Largediv,
+    LargeBox,
     Text,
     SmallContainer,
-    Smalldiv
+    SmallBox
 } from "./styles/styledNavbar";
 
 const Navbar = () => {
@@ -24,8 +24,8 @@ const Navbar = () => {
 
     return (
         <>
-            <Navdiv>
-                <Rightdiv>
+            <Container>
+                <RightBox>
                     <Navlink>
                         360 Planner
                     <Dropdown>
@@ -36,86 +36,86 @@ const Navbar = () => {
                             <DropdownLink>Wedding Website</DropdownLink>
                             <DropdownLink>Couple Website</DropdownLink>
                             <DropdownLink>More</DropdownLink>
-                        </Dropdown>
+                    </Dropdown>
                     </Navlink>
                     <Navlink>Her</Navlink>
                     <Navlink>Him</Navlink>
                     <Navlink>The Wedding</Navlink>
-                </Rightdiv>
+                </RightBox>
                 <Logo src="/images/logo.png" alt="weds 360" />
-                <Leftdiv>
+                <LeftBox>
                     <Navlink>Vendors</Navlink>
                     <Navlink>Gallery</Navlink>
                     <Navlink>Ideas & more</Navlink>
-                </Leftdiv>
-            </Navdiv>
+                </LeftBox>
+            </Container>
 
-            <ResponsiveNav>
+            <ResponsiveBox>
                 <Navlink>Link</Navlink>
                 <Logo src="/images/logo.png" alt="weds 360" />
                 <ResponsiveButton>
                     <img onClick={setToggleShow} src="/images/responsive/burger.png" alt="burger toggle" />
                 </ResponsiveButton>
-            </ResponsiveNav>
+            </ResponsiveBox>
 
             {toggle && (
-                <Popdiv>
+                <PopBox>
                     <Section>
-                        <Largediv>
+                        <LargeBox>
                             <img src="/images/responsive/icons/360planner.png" alt="360 planner" />
                             <Text>360 planner</Text>
-                        </Largediv>
-                        <Largediv>
+                        </LargeBox>
+                        <LargeBox>
                             <img src="/images/responsive/icons/him.png" alt="Him" />
                             <Text>Him</Text>
-                        </Largediv>
+                        </LargeBox>
 
                         <SmallContainer>
-                            <Smalldiv>
+                            <SmallBox>
                                 <img src="/images/responsive/icons/checklist.png" alt="Check list" />
                                 <Text>Check list</Text>
-                            </Smalldiv>
+                            </SmallBox>
 
-                            <Smalldiv>
+                            <SmallBox>
                                 <img src="/images/responsive/icons/guestlist.png" alt="Guest list" />
                                 <Text>Guest list</Text>
-                            </Smalldiv>
+                            </SmallBox>
                         </SmallContainer>
 
-                        <Largediv>
+                        <LargeBox>
                             <img src="/images/responsive/icons/gallery.png" alt="Gallery" />
                             <Text>Gallery</Text>
-                        </Largediv>
+                        </LargeBox>
                     </Section>
 
                     <Section>
-                        <Largediv>
+                        <LargeBox>
                             <img src="/images/responsive/icons/forthewedding.png" alt="For The Wedding" />
                             <Text>For The Wedding</Text>
-                        </Largediv>
-                        <Largediv>
+                        </LargeBox>
+                        <LargeBox>
                             <img src="/images/responsive/icons/her.png" alt="Her" />
                             <Text>Her</Text>
-                        </Largediv>
+                        </LargeBox>
 
                         <SmallContainer>
-                            <Smalldiv>
+                            <SmallBox>
                                 <img src="/images/responsive/icons/registrylist.png" alt="Registry list" />
                                 <Text>Registry list</Text>
-                            </Smalldiv>
+                            </SmallBox>
 
-                            <Smalldiv>
+                            <SmallBox>
                                 <img src="/images/responsive/icons/budgeter.png" alt="Budgeter" />
                                 <Text>Budgeter</Text>
-                            </Smalldiv>
+                            </SmallBox>
                         </SmallContainer>
 
-                        <Largediv>
+                        <LargeBox>
                             <img src="/images/responsive/icons/ideasandmore.png" alt="Ideas & more" />
                             <Text>Ideas & more</Text>
-                        </Largediv>
+                        </LargeBox>
                     </Section>
-                </Popdiv>
+                </PopBox>
             )}
         </>
     )

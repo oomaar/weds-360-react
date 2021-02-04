@@ -30,7 +30,7 @@ export const Title = styled.h3`
     }
 `;
 
-export const RowContainer = styled.div`
+export const RowBox = styled.div`
     display: flex;
     flex-direction: column;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 
-export const Navdiv = styled.div`
+export const Container = styled.div`
     display: flex;
     justify-content: center;
     margin: 30px 0;
@@ -19,7 +19,7 @@ export const Navdiv = styled.div`
     }
 `;
 
-export const Rightdiv = styled.div`
+export const RightBox = styled.div`
      /* margin-left: auto; */
     display: flex;
     justify-content: space-around;
@@ -30,7 +30,7 @@ export const Rightdiv = styled.div`
     padding: 10px;
 `;
 
-export const Leftdiv = styled.div`
+export const LeftBox = styled.div`
     /* margin-right: auto; */
     display: flex;
     justify-content: space-around;
@@ -100,7 +100,8 @@ export const Logo = styled.img`
 }
 `;
 
-export const ResponsiveNav = styled.div`
+// Small Screens: Nav and Burger Button
+export const ResponsiveBox = styled.div`
     display: none;
 
     ${Logo} {
@@ -125,8 +126,8 @@ export const ResponsiveButton = styled.button`
     }
 `;
 
-
-export const Popdiv = styled.div`
+// Pop up Nav bar onClick
+export const PopBox = styled.div`
     display: none;
     position: absolute;
     justify-content: space-between;
@@ -149,7 +150,7 @@ export const Section = styled.div`
     border: 1px solid white;
 `;
 
-export const Largediv = styled.div`
+export const LargeBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -177,7 +178,7 @@ export const SmallContainer = styled.div`
     display: flex;
 `;
 
-export const Smalldiv = styled.div`
+export const SmallBox = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;

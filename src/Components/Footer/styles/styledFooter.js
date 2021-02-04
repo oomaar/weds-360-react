@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Footerdiv = styled.div`
+export const Container = styled.div`
     background-color: #111;
     color: #fff;
     display: flex;
@@ -14,7 +14,7 @@ export const Footerdiv = styled.div`
     }
 `;
 
-export const Leftdiv = styled.div`
+export const LeftBox = styled.div`
     margin-left: 20px;
     text-align: center;
 
@@ -34,7 +34,7 @@ export const SocialIcon = styled.img`
     cursor: pointer;
 `;
 
-export const Centerdiv = styled.div`
+export const CenterBox = styled.div`
     text-align: center;
 `;
 
@@ -48,7 +48,7 @@ export const Copy = styled.h6`
     }
 `;
 
-export const Rightdiv = styled.div`
+export const RightBox = styled.div`
     display: flex;
     flex-direction: column;
     margin-right: 50px;
