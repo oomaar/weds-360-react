@@ -100,7 +100,7 @@ export const ItemText = styled.p`
 `;
 
 export const ItemLink = styled.a`
-    color: #024d4c;
+    color: #008174;
     display: block;
     font-size: 12px;
     line-height: 1.25;

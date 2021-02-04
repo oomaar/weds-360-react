@@ -7,7 +7,8 @@ import {
     SubTitle,
     SearchBox,
     MainBox,
-    Button,
+    ClearButton,
+    ApplyButton,
     Input
 } from "./styles/styledHome";
 
@@ -22,13 +23,13 @@ const Home = () => {
 
             <HomeBox>
                 <SearchBox>
-                    <Button>Clear</Button>
-                    <Button>Apply</Button>
+                    <ClearButton>Clear</ClearButton>
+                    <ApplyButton>Apply</ApplyButton>
                     <Input placeholder="Search" />
                 </SearchBox>
 
                 <MainBox>
-                    <img src="/images/logo.png" alt="For Testing" />
+                    <h1>I'm An H1</h1>
                 </MainBox>
             </HomeBox>
         </Container>
