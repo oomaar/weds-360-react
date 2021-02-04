@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const Navdiv = styled.div`
     display: flex;
@@ -136,9 +136,8 @@ export const Popdiv = styled.div`
     max-width: 767px;
     width: 100%;
     padding: 0;
-    clip-path: circle(700px at 90% -10%);
-    -webkit-clip-path: circle(700px at 90% -10%);
-    transition: all 1s ease-out;
+    clip-path: circle(700px at 90% 10%);
+    transition: 5s ease-out;
 
     @media (max-width: 767px) {
         display: flex;
