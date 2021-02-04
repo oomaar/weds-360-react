@@ -62,7 +62,7 @@ export const Dropdown = styled.div`
     box-shadow: 1px 1px 1px 1px #000;
 
     ${DropdownLink} {
-      cursor: pointer;
+    cursor: pointer;
     }
 `;
 
@@ -114,11 +114,81 @@ export const ResponsiveNav = styled.div`
 `;
 
 export const ResponsiveButton = styled.button`
-    background-color: transparent;
     cursor: pointer;
     border: none;
+    height: 0;
+    align-self: center;
+    margin-bottom: 30px;
 
     img {
         width: 30px;
+    }
+`;
+
+
+export const Popdiv = styled.div`
+    display: none;
+    position: absolute;
+    justify-content: space-between;
+    background: url('/images/responsive/bg.jpg');
+    background-size: cover;
+    color: #fff;
+    max-width: 767px;
+    width: 100%;
+    padding: 0;
+    clip-path: circle(700px at 90% -10%);
+    -webkit-clip-path: circle(700px at 90% -10%);
+    transition: all 1s ease-out;
+
+    @media (max-width: 767px) {
+        display: flex;
+    }
+`;
+
+export const Section = styled.div`
+    width: 50%;
+    border: 1px solid white;
+`;
+
+export const Largediv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 99%;
+    border: 1px solid white;
+    border-right: 0;
+    height: 140px;
+    padding: 10px;
+    
+
+    img {
+        margin-top: 10px;
+        height: 50px;
+        cursor: pointer;
+    }
+`;
+
+export const Text = styled.h5`
+    margin: 0 0 20px 0;
+    cursor: pointer;
+`;
+
+export const SmallContainer = styled.div`
+    display: flex;
+`;
+
+export const Smalldiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    border: 1px solid white;
+    padding: 10px;
+
+    img {
+        width: 50px;
+        cursor: pointer;
     }
 `;
