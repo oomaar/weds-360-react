@@ -1,20 +1,22 @@
 import React from 'react';
-import { Navdiv, Rightdiv, Navlink, Logo, Leftdiv, Dropdown } from "./styles/styledNavbar";
+import { Navdiv, Rightdiv, Navlink, Logo, Leftdiv, Dropdown, DropdownLink } from "./styles/styledNavbar";
 
 const Navbar = () => {
     return (
         <Navdiv>
             <Rightdiv>
-                <Navlink>360 Planner</Navlink>
-                <Dropdown>
-                    <Navlink>Check List</Navlink>
-                    <Navlink>Budgeter</Navlink>
-                    <Navlink>Registry List</Navlink>
-                    <Navlink>Guest List</Navlink>
-                    <Navlink>Wedding Website</Navlink>
-                    <Navlink>Couple Website</Navlink>
-                    <Navlink>More</Navlink>
-                </Dropdown>
+                <Navlink>
+                    360 Planner
+                    <Dropdown>
+                        <DropdownLink>Check List</DropdownLink>
+                        <DropdownLink>Budgeter</DropdownLink>
+                        <DropdownLink>Registry List</DropdownLink>
+                        <DropdownLink>Guest List</DropdownLink>
+                        <DropdownLink>Wedding Website</DropdownLink>
+                        <DropdownLink>Couple Website</DropdownLink>
+                        <DropdownLink>More</DropdownLink>
+                    </Dropdown>
+                </Navlink>
                 <Navlink>Her</Navlink>
                 <Navlink>Him</Navlink>
                 <Navlink>The Wedding</Navlink>
@@ -30,3 +32,14 @@ const Navbar = () => {
 }
 
 export default Navbar;
+
+
+// <Header.Dropdown>
+//     <Header.Group>
+//         <Header.Picture src={user.photoURL} />
+//         <Header.TextLink>{user.displayName}</Header.TextLink>
+//     </Header.Group>
+//     <Header.Group>
+//         <Header.TextLink onClick={() => firebase.auth().signOut()}>Sign out</Header.TextLink>
+//     </Header.Group>
+// </Header.Dropdown>
