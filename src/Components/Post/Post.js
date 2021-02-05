@@ -29,12 +29,34 @@ const Post = () => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
+    const indexOfLastPage = Math.ceil(posts.length / postsPerPage) - 1;
+
+    let prevPage = currentPage - 1;
+    let nextPage = currentPage + 1;
 
     // Pagination
     const paginate = (number) => setCurrentPage(number);
+    const paginatePrev = (number) => setCurrentPage(number);
+    const paginateNext = (number) => setCurrentPage(number);
 
     return (
         <Container>
+            <Ulist>
+                {currentPost.map(post => (
+                    <Item key={post.id}>
+                        <img src={post.thumbnailUrl} alt={post.title} />
+                        <h6>{post.id}</h6>
+                    </Item>
+                ))}
+            </Ulist>
+            <Ulist>
+                {currentPost.map(post => (
+                    <Item key={post.id}>
+                        <img src={post.thumbnailUrl} alt={post.title} />
+                        <h6>{post.id}</h6>
+                    </Item>
+                ))}
+            </Ulist>
             <Ulist>
                 {currentPost.map(post => (
                     <Item key={post.id}>
@@ -48,6 +70,12 @@ const Post = () => {
                 postsPerPage={postsPerPage}
                 posts={posts}
                 paginate={paginate}
+                paginatePrev={paginatePrev}
+                paginateNext={paginateNext}
+                indexOfLastPage={indexOfLastPage}
+                currentPage={currentPage}
+                prevPage={prevPage}
+                nextPage={nextPage}
             />
         </Container>
     )

@@ -5,7 +5,17 @@ import {
     Item
 } from "./styles/styledPagination";
 
-const Pagination = ({ postsPerPage, posts, paginate }) => {
+const Pagination = ({
+    postsPerPage,
+    posts,
+    paginate,
+    paginatePrev,
+    paginateNext,
+    indexOfLastPage,
+    currentPage,
+    prevPage,
+    nextPage
+}) => {
     const pageNumbers = [];
 
     let i = 1;
@@ -17,6 +27,7 @@ const Pagination = ({ postsPerPage, posts, paginate }) => {
     return (
         <Container>
             <Ulist>
+                <button onClick={() => currentPage > 1 && paginatePrev(prevPage)}>← Previous</button>
                 {pageNumbers.map(number => (
                     <Item key={number}>
                         <a onClick={() => paginate(number)} href="!#">
@@ -24,6 +35,7 @@ const Pagination = ({ postsPerPage, posts, paginate }) => {
                         </a>
                     </Item>
                 ))}
+                <button onClick={() => currentPage < indexOfLastPage && paginateNext(nextPage)}>Next →</button>
             </Ulist>
         </Container>
     )
