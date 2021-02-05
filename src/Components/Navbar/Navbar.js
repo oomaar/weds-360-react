@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Container,
     RightBox,
@@ -14,41 +14,68 @@ import {
     LargeBox,
     Text,
     SmallContainer,
-    SmallBox
+    SmallBox,
+    ScrollNav
 } from "./styles/styledNavbar";
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
+    const [show, handleShow] = useState(false);
 
     const setToggleShow = () => setToggle(state => !state);
 
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                handleShow(true);
+            } else handleShow(false);
+        });
+
+        return () => {
+            window.removeEventListener("scroll", null);
+        };
+    }, []);
+
     return (
         <>
-            <Container>
-                <RightBox>
-                    <Navlink>
-                        360 Planner
-                    <Dropdown>
-                            <DropdownLink>Check List</DropdownLink>
-                            <DropdownLink>Budgeter</DropdownLink>
-                            <DropdownLink>Registry List</DropdownLink>
-                            <DropdownLink>Guest List</DropdownLink>
-                            <DropdownLink>Wedding Website</DropdownLink>
-                            <DropdownLink>Couple Website</DropdownLink>
-                            <DropdownLink>More</DropdownLink>
-                    </Dropdown>
-                    </Navlink>
+            {show ? (
+                <ScrollNav>
+                    <Logo src="/images/logo.png" alt="weds 360" />
+                    <Navlink>36 Planner</Navlink>
                     <Navlink>Her</Navlink>
                     <Navlink>Him</Navlink>
                     <Navlink>The Wedding</Navlink>
-                </RightBox>
-                <Logo src="/images/logo.png" alt="weds 360" />
-                <LeftBox>
                     <Navlink>Vendors</Navlink>
                     <Navlink>Gallery</Navlink>
                     <Navlink>Ideas & more</Navlink>
-                </LeftBox>
-            </Container>
+                </ScrollNav>
+            ) : (
+                    <Container className={`${show && 'hide'}`}>
+                        <RightBox>
+                            <Navlink>
+                                360 Planner
+                                    <Dropdown>
+                                    <DropdownLink>Check List</DropdownLink>
+                                    <DropdownLink>Budgeter</DropdownLink>
+                                    <DropdownLink>Registry List</DropdownLink>
+                                    <DropdownLink>Guest List</DropdownLink>
+                                    <DropdownLink>Wedding Website</DropdownLink>
+                                    <DropdownLink>Couple Website</DropdownLink>
+                                    <DropdownLink>More</DropdownLink>
+                                </Dropdown>
+                            </Navlink>
+                            <Navlink>Her</Navlink>
+                            <Navlink>Him</Navlink>
+                            <Navlink>The Wedding</Navlink>
+                        </RightBox>
+                        <Logo src="/images/logo.png" alt="weds 360" />
+                        <LeftBox>
+                            <Navlink>Vendors</Navlink>
+                            <Navlink>Gallery</Navlink>
+                            <Navlink>Ideas & more</Navlink>
+                        </LeftBox>
+                    </Container>
+                )}
 
             <ResponsiveBox>
                 <Navlink>Link</Navlink>

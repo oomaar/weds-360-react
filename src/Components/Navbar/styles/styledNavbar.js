@@ -5,6 +5,10 @@ export const Container = styled.div`
     justify-content: center;
     margin: 30px 0;
 
+    &.hide {
+        display: none;
+    }
+
     @media (max-width: 1200px) {
         /* laptop */
     }
@@ -188,5 +192,24 @@ export const SmallBox = styled.div`
     img {
         width: 50px;
         cursor: pointer;
+    }
+`;
+
+export const ScrollNav = styled.div`
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    /* transition-timing-function: ease-in;
+    transition: all 1s; */
+
+    ${Logo} {
+        width: 60px;
+        margin: 0 40px;
+    }
+
+    ${Navlink} {
+        margin: 20px;
     }
 `;

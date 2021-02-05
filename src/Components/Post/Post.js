@@ -17,7 +17,7 @@ const Post = () => {
         const fetchPost = async () => {
             setLoading(true);
             const res = await axios.get('https://jsonplaceholder.typicode.com/photos');
-            setPosts(res.data.slice(0, 50));
+            setPosts(res.data.slice(0, 40));
             setLoading(false);
         }
 

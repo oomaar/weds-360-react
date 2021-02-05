@@ -28,6 +28,7 @@ export const Ulist = styled.ul`
         border: 1px solid #024d4c;
         font-size: 13px;
         width: 110px;
+        height: 30px;
         cursor: pointer;
         color: #024d4c;
 
