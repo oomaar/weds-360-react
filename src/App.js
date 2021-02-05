@@ -1,17 +1,19 @@
 import React from 'react';
-import styled from "styled-components";
-import { Footer, Home, Jumbo, Navbar } from './Components';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import CategoriesPage from './Pages/CategoriesPage';
+import HomePage from './Pages/HomePage';
 
-const Application = styled.div``;
 
 const App = () => {
     return (
-        <Application>
-            <Navbar />
-            <Home />
-            <Jumbo />
-            <Footer />
-        </Application>
+        <Router>
+            <Route exact path="/">
+                <HomePage />
+            </Route>
+            <Route exact path="/categories">
+                <CategoriesPage />
+            </Route>
+        </Router>
     )
 }
 

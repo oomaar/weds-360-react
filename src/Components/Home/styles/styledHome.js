@@ -30,12 +30,14 @@ export const TitleBox = styled.div`
     }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.a`
     color: #008174;
     cursor: pointer;
     text-transform: uppercase;
     font-size: 20px;
+    font-weight: 700;
     margin: 0 20px 0 0;
+    text-decoration: none;
 `;
 
 export const SubTitle = styled.h3`

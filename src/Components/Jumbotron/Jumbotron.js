@@ -10,10 +10,10 @@ import {
     ItemTitle,
     ItemText,
     ItemLink
-} from "./styles/styledJumbo";
+} from "./styles/styledJumbotron";
 import jubmoData from "../../data/jumbo.json";
 
-const Jumbo = () => {
+const Jumbotron = () => {
     return (
         <Container>
             <Title>WEDDING PLANNING IS A PIECE OF CAKE WITH WEDS360. WE KNOW WHAT MATTERS MOST AND YOU CAN COUNT ON US EVERY STEP OF THE WAY.</Title>
@@ -52,4 +52,4 @@ const Jumbo = () => {
     )
 }
 
-export default Jumbo;
+export default Jumbotron;
