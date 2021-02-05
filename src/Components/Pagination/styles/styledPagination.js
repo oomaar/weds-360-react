@@ -1,13 +1,8 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-    /* border: 4px solid red; */
     max-width: 540px;
     margin-top: 100px;
-
-    @media (max-width: 990px) {
-        /* small screens */
-    }
 `;
 
 export const Ulist = styled.ul`

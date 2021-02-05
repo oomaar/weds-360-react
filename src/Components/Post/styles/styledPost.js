@@ -22,25 +22,24 @@ export const Item = styled.li`
         width: 230px;
         margin: 10px;
 
-    @media (max-width: 1200px) {
-        width: 200px;
-    }
+        @media (max-width: 1200px) {
+            width: 200px;
+        }
 
-    @media (max-width: 990px) {
-        /* small screens */
-        width: 150px;
-    }
+        @media (max-width: 990px) {
+            /* small screens */
+            width: 150px;
+        }
     
-    @media (max-width: 767px) {
-        /* Ipad */
-        width: 120px;
-    }
+        @media (max-width: 767px) {
+            /* Ipad */
+            width: 120px;
+        }
 
-    
-    @media (max-width: 400px) {
-        /* mobile screens */
-        width: 80px;
-    }
+        @media (max-width: 400px) {
+            /* mobile screens */
+            width: 80px;
+        }
     }
 `;
 

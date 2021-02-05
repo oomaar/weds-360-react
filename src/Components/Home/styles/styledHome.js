@@ -19,10 +19,6 @@ export const Container = styled.div`
         margin: auto;
         padding: 20px;
     }
-
-    @media (max-width: 400px) {
-        /* mobile screens */
-    }
 `;
 
 export const TitleBox = styled.div`
@@ -107,7 +103,6 @@ export const Input = styled.input`
 `;
 
 export const MainBox = styled.div`
-    /* border: 4px solid red; */
     flex: 0.7;
     height: 1100px;
     

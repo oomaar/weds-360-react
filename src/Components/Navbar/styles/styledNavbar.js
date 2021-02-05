@@ -9,14 +9,6 @@ export const Container = styled.div`
         display: none;
     }
 
-    @media (max-width: 1200px) {
-        /* laptop */
-    }
-
-    @media (max-width: 990px) {
-        /* small screens */
-    }
-
     @media (max-width: 767px) {
         /* Ipad */
         display: none;
@@ -195,6 +187,7 @@ export const SmallBox = styled.div`
     }
 `;
 
+// Scrolling navbar
 export const ScrollNav = styled.div`
     position: fixed;
     background-color: white;

@@ -149,20 +149,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-// <div>
-// <section>
-//     <div>large</div>
-//     <div>large</div>
-//     <div>small</div>
-//     <div>small</div>
-//     <div>large</div>
-// </section>
-// <section>
-//     <div>large</div>
-//     <div>large</div>
-//     <div>small</div>
-//     <div>small</div>
-//     <div>large</div>
-// </section>
-// </div>
