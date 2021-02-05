@@ -61,7 +61,7 @@ export const ApplyButton = styled.button`
 
 export const Input = styled.input`
     display: inline-block;
-    width: 100%;
+    width: 80%;
     border: 1px solid #000;
     border-radius: 0;
     padding: 5px;
@@ -71,6 +71,7 @@ export const Input = styled.input`
 export const MainBox = styled.div`
     border: 4px solid red;
     flex: 0.7;
+    height: 1100px;
     
     img {
         width: 1000px;

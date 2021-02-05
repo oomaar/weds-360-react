@@ -1,4 +1,5 @@
 import React from 'react';
+import { Post } from '..';
 import {
     Container,
     HomeBox,
@@ -25,11 +26,13 @@ const Home = () => {
                 <SearchBox>
                     <ClearButton>Clear</ClearButton>
                     <ApplyButton>Apply</ApplyButton>
-                    <Input placeholder="Search" />
+                    <Input type="text" placeholder="Search" />
                 </SearchBox>
 
                 <MainBox>
-                    <h1>I'm An H1</h1>
+                <Post />
+                <Post />
+                <Post />
                 </MainBox>
             </HomeBox>
         </Container>
