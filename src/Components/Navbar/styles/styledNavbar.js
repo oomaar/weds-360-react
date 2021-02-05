@@ -205,4 +205,9 @@ export const ScrollNav = styled.div`
     ${Navlink} {
         margin: 20px;
     }
+    
+    @media (max-width: 767px) {
+         /* Ipad */
+        display: none;
+    }
 `;
