@@ -2,7 +2,7 @@ import styled from "styled-components/macro";
 
 export const Container = styled.div`
     /* border: 4px solid red; */
-    max-width: 640px;
+    max-width: 540px;
     margin-top: 100px;
 
     @media (max-width: 990px) {
@@ -31,25 +31,23 @@ export const Ulist = styled.ul`
         cursor: pointer;
         color: #024d4c;
 
+        @media (max-width: 990px) {
+            /* small screens */
+            width: 80px;
+            height: 20px;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 400px) {
+            width: 70px;
+        }
+    }
+
     @media (max-width: 990px) {
-        /* small screens */
-        width: 80px;
-        height: 20px;
-        font-size: 11px;
-        display: flex;
-        align-items: center;
-    }
-
-    
-    @media (max-width: 400px) {
         /* mobile screens */
-        display: none;
-    }
-    }
-
-    @media (max-width: 400px) {
-        /* mobile screens */
-        border: 0;
+        border: none;
     }
 `;
 
