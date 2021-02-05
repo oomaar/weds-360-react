@@ -3,20 +3,21 @@ import axios from "axios";
 import {
     Container,
     Ulist,
-    Item
+    Item,
 } from "./styles/styledPost";
+import { Pagination } from '..';
 
 const Post = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(9);
+    const [postsPerPage] = useState(3);
 
     useEffect(() => {
         const fetchPost = async () => {
             setLoading(true);
             const res = await axios.get('https://jsonplaceholder.typicode.com/photos');
-            setPosts(res.data.slice(0, 100));
+            setPosts(res.data.slice(0, 50));
             setLoading(false);
         }
 
@@ -30,15 +31,7 @@ const Post = () => {
     const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
 
     // Pagination
-    const pageNumbers = [];
-
-    let i = 1;
-    while (i <= Math.ceil(posts.length / postsPerPage)) {
-        pageNumbers.push(i);
-        i++;
-    }
-
-    const paginate = (number) => setCurrentPage(number); 
+    const paginate = (number) => setCurrentPage(number);
 
     return (
         <Container>
@@ -51,17 +44,11 @@ const Post = () => {
                 ))}
             </Ulist>
 
-            <nav>
-                <ul>
-                    {pageNumbers.map(number => (
-                        <li key={number}>
-                            <a onClick={() => paginate(number)} href="!#">
-                                {number}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+            <Pagination
+                postsPerPage={postsPerPage}
+                posts={posts}
+                paginate={paginate}
+            />
         </Container>
     )
 }

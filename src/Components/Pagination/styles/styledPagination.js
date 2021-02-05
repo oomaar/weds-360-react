@@ -6,10 +6,11 @@ export const Ulist = styled.ul`
     list-style-type: none;
     display: flex;
 `;
+
 export const Item = styled.li`
-    img {
-        width: 230px;
-        margin: 10px;
+    a {
+        border: 1px solid #000;
+        padding: 2px;
+        text-decoration: none;
     }
 `;
-
