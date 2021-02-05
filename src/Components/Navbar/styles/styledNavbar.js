@@ -137,8 +137,6 @@ export const PopBox = styled.div`
     max-width: 767px;
     width: 100%;
     padding: 0;
-    clip-path: circle(700px at 90% 10%);
-    transition: 5s ease-out;
 
     @media (max-width: 767px) {
         display: flex;

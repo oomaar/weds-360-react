@@ -4,6 +4,10 @@ export const Container = styled.div`
     /* border: 4px solid red; */
     max-width: 640px;
     margin-top: 100px;
+
+    @media (max-width: 990px) {
+        /* small screens */
+    }
 `;
 
 export const Ulist = styled.ul`
@@ -26,11 +30,34 @@ export const Ulist = styled.ul`
         width: 110px;
         cursor: pointer;
         color: #024d4c;
+
+    @media (max-width: 990px) {
+        /* small screens */
+        width: 80px;
+        height: 20px;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+    }
+
+    
+    @media (max-width: 400px) {
+        /* mobile screens */
+        display: none;
+    }
+    }
+
+    @media (max-width: 400px) {
+        /* mobile screens */
+        border: 0;
     }
 `;
 
 export const Item = styled.li`
-    
+    @media (max-width: 990px) {
+        /* small screens */
+        font-size: 10px;
+    }
 
     a {
         border: 1px solid #000;

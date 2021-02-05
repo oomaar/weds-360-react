@@ -8,6 +8,7 @@ import {
     SubTitle,
     SearchBox,
     MainBox,
+    ButtonsBox,
     ClearButton,
     ApplyButton,
     Input
@@ -24,8 +25,10 @@ const Home = () => {
 
             <HomeBox>
                 <SearchBox>
-                    <ClearButton>Clear</ClearButton>
-                    <ApplyButton>Apply</ApplyButton>
+                    <ButtonsBox>
+                        <ClearButton>Clear</ClearButton>
+                        <ApplyButton>Apply</ApplyButton>
+                    </ButtonsBox>
                     <Input type="text" placeholder="Search" />
                 </SearchBox>
 

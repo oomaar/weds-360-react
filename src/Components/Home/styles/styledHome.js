@@ -1,9 +1,28 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-    /* border: 4px solid black; */
     max-width: 1100px;
     margin: 10px auto;
+
+    @media (max-width: 1200px) {
+        width: 900px;
+    }
+
+    @media (max-width: 990px) {
+        /* small screens */
+        width: 850px;
+    }
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        width: 90%;
+        margin: auto;
+        padding: 20px;
+    }
+
+    @media (max-width: 400px) {
+        /* mobile screens */
+    }
 `;
 
 export const TitleBox = styled.div`
@@ -32,11 +51,25 @@ export const SubTitle = styled.h3`
 export const HomeBox = styled.div`
     margin: 50px auto;
     display: flex;
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        flex-direction: column;
+    }
 `;
 
 export const SearchBox = styled.div`
     flex: 0.3;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        width: 90%;
+    }
 `;
+
+export const ButtonsBox = styled.div``;
 
 export const ClearButton = styled.button`
     border: solid 1px #000;
@@ -61,11 +94,16 @@ export const ApplyButton = styled.button`
 
 export const Input = styled.input`
     display: inline-block;
-    width: 80%;
+    width: 100%;
     border: 1px solid #000;
     border-radius: 0;
     padding: 5px;
     margin-top: 30px;
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        margin-bottom: 30px;
+    }
 `;
 
 export const MainBox = styled.div`
@@ -75,5 +113,18 @@ export const MainBox = styled.div`
     
     img {
         width: 1000px;
+    }
+
+    @media (max-width: 990px) {
+        /* small screens */
+        height: 100%;
+    }
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 `;
