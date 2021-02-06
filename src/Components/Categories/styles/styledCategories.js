@@ -1,27 +1,23 @@
 import styled, { keyframes } from "styled-components/macro";
 
 export const Container = styled.div`
-    border: 4px solid red;
     max-width: 1100px;
-    max-height: 1000px;
+    max-height: 1100px;
     margin: 100px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @media (max-width: 990px) {
-        /* small screens */
         width: 97%;
     }
 
     @media (max-width: 400px) {
-        /* Mobile */
         margin: 0;
     }
 `;
 
 export const CategoriesBox = styled.div`
-    border: 3px solid green;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -50,23 +46,19 @@ export const DropDown = styled.div`
         margin: 0 20px;
 
         @media (max-width: 767px) {
-            /* Ipad */
             width: 20px;
         }
 
         @media (max-width: 400px) {
-            /* Mobile */
             margin: 0;
         }
     }
 
     @media (max-width: 990px) {
-        /* small screens */
         font-size: 11px;
     }
 
     @media (max-width: 767px) {
-        /* Ipad */
         letter-spacing: 0px;
         font-size: 11px;
     }
@@ -86,12 +78,10 @@ export const Input = styled.input`
     letter-spacing: 4.1px;
 
     @media (max-width: 990px) {
-        /* small screens */
         font-size: 11px;
     }
 
     @media (max-width: 767px) {
-        /* Ipad */
         letter-spacing: 3px;
         font-size: 10px;
     }
@@ -126,7 +116,6 @@ export const SubContainer = styled.div`
     width: 95%;
     margin-bottom: 20px;
     animation: ${fade} 500ms; 
-    /* transform: scaleX(1, 1, 1); */
 
     &.hide {
         display: none;
@@ -160,7 +149,6 @@ export const BlackBox = styled.div`
         margin: 10px;
 
         @media (max-width: 400px) {
-            /* Mobile */
             width: 30px;
         }
     }
@@ -189,6 +177,7 @@ export const WeddingBox = styled.div`
     width: 350px;
     height: 230px;
     cursor: pointer;
+    margin-top: 20px;
     margin-left: 30px;
     margin-right: auto;
     display: flex;
@@ -196,7 +185,6 @@ export const WeddingBox = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
-    border: 3px solid blue;
 
     img {
         width: 60px;
@@ -209,7 +197,6 @@ export const WeddingBox = styled.div`
     }
 
     @media (max-width: 767px) {
-            /* Ipad */
             width: 80%;
     }
 `;
@@ -224,21 +211,3 @@ export const WeddingBoxText = styled.h3`
         color: #111;
     }
 `;
-
-
-// @media (max-width: 1200px) {
-//     /* laptop */
-// }
-
-// @media (max-width: 990px) {
-//     /* small screens */
-// }
-
-// @media (max-width: 767px) {
-//     /* Ipad */
-//     display: none;
-// }
-
-// @media (max-width: 400px) {
-//    /* Mobile */
-// }
