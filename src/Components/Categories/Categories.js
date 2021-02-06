@@ -5,6 +5,7 @@ import {
     DropDown,
     Input,
     WeddingBox,
+    WeddingBoxText,
     WhiteBox
 } from "./styles/styledCategories";
 
@@ -14,15 +15,23 @@ const Categories = () => {
             <CategoriesBox>
                 <DropDown>
                     Find Categories Here
+                    <img src="/images/icons/chevron-down.png" alt="chevron-down" />
                 </DropDown>
                 <Input type="text" placeholder="SEARCH" />
             </CategoriesBox>
 
             <WeddingBox>
-                Wedding Ideas
+                <img src="/images/responsive/icons/her.png" alt="icon" />
+                <WeddingBoxText>Wedding Ideas</WeddingBoxText>
                 <WhiteBox>
-                    Wedding Ideas
+                    <img src="/images/icons/home-icon.png" alt="home-icon"/>
+                    <WeddingBoxText className="dark">Wedding Ideas</WeddingBoxText>
                 </WhiteBox>
+                {/* <div>
+                    <div>
+                        <img src="/images/responsive/icons/her.png" alt="" />
+                    </div>
+                </div> */}
             </WeddingBox>
         </Container>
     )
