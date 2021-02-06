@@ -1,5 +1,5 @@
 import React from 'react';
-import { selectShows, setShow } from "../Navbar/showsSlice";
+import { selectCats, setCats } from "./categoriesSlice";
 import { useSelector, useDispatch } from "react-redux";
 import {
     Container,
@@ -15,24 +15,24 @@ import {
 
 const Categories = () => {
     const dispatch = useDispatch();
-    const showing = useSelector(selectShows);
+    const category = useSelector(selectCats);
 
-    const showDiv = () => {
-        dispatch(setShow({ shows: true }));
+    const showCategories = () => {
+        dispatch(setCats({ cats: true }));
     }
 
     return (
         <Container>
             <CategoriesBox>
-                <DropDown onClick={showDiv}>
+                <DropDown onClick={showCategories}>
                     Find Categories Here
                     <img src="/images/icons/chevron-down.png" alt="chevron-down" />
                 </DropDown>
                 <Input type="text" placeholder="SEARCH" />
             </CategoriesBox>
 
-            {!showing.shows && (
-                <SubContainer className={`${showing.shows && 'hide'}`}>
+            {!category.cats && (
+                <SubContainer className={`${category.cats && 'hide'}`}>
                     <BlackBox>
                         <img src="/images/responsive/icons/360planner.png" alt="360 planner" />
                         <img src="/images/responsive/icons/him.png" alt="Him" />
