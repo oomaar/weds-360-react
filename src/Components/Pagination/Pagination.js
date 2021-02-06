@@ -30,7 +30,7 @@ const Pagination = ({
                 <button onClick={() => currentPage > 1 && paginatePrev(prevPage)}>← Previous</button>
                 {pageNumbers.map(number => (
                     <Item key={number}>
-                        <a onClick={() => paginate(number)} href="!#">
+                        <a onClick={() => paginate(number)} href="#">
                             {number}
                         </a>
                     </Item>
