@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { selectShows, setShow } from "./showsSlice";
+import { useSelector, useDispatch } from "react-redux";
 import {
     Container,
     RightBox,
@@ -19,16 +21,18 @@ import {
 } from "./styles/styledNavbar";
 
 const Navbar = () => {
-    const [toggle, setToggle] = useState(false);
     const [show, handleShow] = useState(false);
 
-    const setToggleShow = () => setToggle(state => !state);
+    const dispatch = useDispatch();
+    const showing = useSelector(selectShows);
+
+    const showDiv = () => {
+        dispatch(setShow({ shows: true }));
+    }
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                handleShow(true);
-            } else handleShow(false);
+            window.scrollY > 200 ? handleShow(true) : handleShow(false);
         });
 
         return () => {
@@ -49,7 +53,7 @@ const Navbar = () => {
                     <Navlink>Gallery</Navlink>
                     <Navlink>Ideas & more</Navlink>
                 </ScrollNav>
-            ) : (
+            ) : ( 
                     <Container className={`${show && 'hide'}`}>
                         <RightBox>
                             <Navlink>
@@ -81,12 +85,12 @@ const Navbar = () => {
                 <Navlink>Link</Navlink>
                 <Logo src="/images/logo.png" alt="weds 360" />
                 <ResponsiveButton>
-                    <img onClick={setToggleShow} src="/images/responsive/burger.png" alt="burger toggle" />
+                    <img onClick={showDiv} src="/images/responsive/burger.png" alt="burger toggle" />
                 </ResponsiveButton>
             </ResponsiveBox>
-
-            {toggle && (
-                <PopBox>
+            
+            {showing.shows && (
+                <PopBox className={`${showing.shows && 'hide'}`}>
                     <Section>
                         <LargeBox>
                             <img src="/images/responsive/icons/360planner.png" alt="360 planner" />

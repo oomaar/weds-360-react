@@ -110,6 +110,7 @@ export const MainBox = styled.div`
     
     img {
         width: 1000px;
+        cursor: pointer;
     }
 
     @media (max-width: 990px) {

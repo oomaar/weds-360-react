@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled, { keyframes } from "styled-components/macro";
 
 export const Container = styled.div`
     display: flex;
@@ -124,6 +124,23 @@ export const ResponsiveButton = styled.button`
 `;
 
 // Pop up Nav bar onClick
+const fade = keyframes`
+    0% {
+        opacity: 0;
+        transform: scale3d(.75, .75, 1);
+    }
+
+    70% {
+        opacity: 0;
+        transform: scale3d(.75, .75, 1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+`;
+
 export const PopBox = styled.div`
     display: none;
     position: absolute;
@@ -134,6 +151,9 @@ export const PopBox = styled.div`
     max-width: 767px;
     width: 100%;
     padding: 0;
+    animation: ${fade} 500ms cubic-bezier(0.39, -1.05, 0.58, 1.95);
+    animation-delay: -0.1s;
+    transform-origin: left top;
 
     @media (max-width: 767px) {
         display: flex;
@@ -195,8 +215,6 @@ export const ScrollNav = styled.div`
     width: 100%;
     display: flex;
     margin-bottom: 20px;
-    /* transition-timing-function: ease-in;
-    transition: all 1s; */
 
     ${Logo} {
         width: 60px;

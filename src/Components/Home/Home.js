@@ -34,8 +34,6 @@ const Home = () => {
 
                 <MainBox>
                 <Post />
-                {/* <Post />
-                <Post /> */}
                 </MainBox>
             </HomeBox>
         </Container>
