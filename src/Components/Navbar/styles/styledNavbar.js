@@ -154,6 +154,7 @@ export const PopBox = styled.div`
     animation: ${fade} 500ms cubic-bezier(0.39, -1.05, 0.58, 1.95);
     animation-delay: -0.1s;
     transform-origin: left top;
+    z-index: 1;
 
     @media (max-width: 767px) {
         display: flex;

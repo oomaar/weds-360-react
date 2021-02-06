@@ -8,6 +8,16 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: 990px) {
+        /* small screens */
+        width: 97%;
+    }
+
+    @media (max-width: 400px) {
+        /* Mobile */
+        margin: 0;
+    }
 `;
 
 export const CategoriesBox = styled.div`
@@ -38,6 +48,27 @@ export const DropDown = styled.div`
     img {
         width: 30px;
         margin: 0 20px;
+
+        @media (max-width: 767px) {
+            /* Ipad */
+            width: 20px;
+        }
+
+        @media (max-width: 400px) {
+            /* Mobile */
+            margin: 0;
+        }
+    }
+
+    @media (max-width: 990px) {
+        /* small screens */
+        font-size: 11px;
+    }
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        letter-spacing: 0px;
+        font-size: 11px;
     }
 `;
 
@@ -53,29 +84,85 @@ export const Input = styled.input`
     margin: 5px auto;
     height: 40px;
     letter-spacing: 4.1px;
-`;
 
-export const BlackBox = styled.div``;
+    @media (max-width: 990px) {
+        /* small screens */
+        font-size: 11px;
+    }
+
+    @media (max-width: 767px) {
+        /* Ipad */
+        letter-spacing: 3px;
+        font-size: 10px;
+    }
+`;
 
 const fade = keyframes`
     0% {
         opacity: 0;
     }
 
-    25% {
-        opacity: 0.3;
+    20% {
+        opacity: 0.2;
     }
 
     50% {
         opacity: 0.5;
     }
 
-    75% {
-        opacity: 0.8;
+    70% {
+        opacity: 0.7;
     }
 
     100% {
         opacity: 1;
+    }
+`;
+
+export const SubContainer = styled.div`
+    display: flex;
+    height: 15vh;
+    background: #111;
+    width: 95%;
+    margin-bottom: 20px;
+    animation: ${fade} 500ms; 
+    /* transform: scaleX(1, 1, 1); */
+
+    &.hide {
+        display: none;
+    }
+`;
+
+export const BlackBox = styled.div`
+    background: #111;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+
+    ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border: 7px solid #232943;
+    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5b5b5b;
+    border-radius: 30px;
+}
+
+    img {
+        width: 50px;
+        margin: 10px;
+
+        @media (max-width: 400px) {
+            /* Mobile */
+            width: 30px;
+        }
     }
 `;
 
@@ -109,6 +196,7 @@ export const WeddingBox = styled.div`
     justify-content: center;
     align-items: center;
     position: relative;
+    border: 3px solid blue;
 
     img {
         width: 60px;
@@ -118,6 +206,11 @@ export const WeddingBox = styled.div`
         ${WhiteBox} {
             display: flex;
         }
+    }
+
+    @media (max-width: 767px) {
+            /* Ipad */
+            width: 80%;
     }
 `;
 
@@ -131,3 +224,21 @@ export const WeddingBoxText = styled.h3`
         color: #111;
     }
 `;
+
+
+// @media (max-width: 1200px) {
+//     /* laptop */
+// }
+
+// @media (max-width: 990px) {
+//     /* small screens */
+// }
+
+// @media (max-width: 767px) {
+//     /* Ipad */
+//     display: none;
+// }
+
+// @media (max-width: 400px) {
+//    /* Mobile */
+// }
