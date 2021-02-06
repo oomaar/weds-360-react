@@ -72,6 +72,7 @@ export const Navlink = styled.a`
     font-weight: 900;
     text-decoration: none;
     cursor: pointer;
+    position: relative;
 
     &:hover > ${Dropdown} {
         display: flex;

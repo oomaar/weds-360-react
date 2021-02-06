@@ -1,10 +1,11 @@
 import React from 'react';
-import { Footer, Jumbotron, Navbar } from '../Components';
+import { Categories, Footer, Jumbotron, Navbar } from '../Components';
 
 const categoriesPage = () => {
     return (
         <div>
             <Navbar />
+            <Categories />
             <Jumbotron />
             <Footer />
         </div>
