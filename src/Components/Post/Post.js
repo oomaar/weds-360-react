@@ -6,6 +6,7 @@ import {
     Item,
 } from "./styles/styledPost";
 import { Pagination } from '..';
+import { Link } from 'react-router-dom';
 
 const Post = () => {
     const [posts, setPosts] = useState([]);
@@ -44,8 +45,10 @@ const Post = () => {
             <Ulist>
                 {currentPost.map(post => (
                     <Item key={post.id}>
-                        <img src={post.thumbnailUrl} alt={post.title} />
-                        <h6>{post.id}</h6>
+                        <Link to={`/photo/${post.id}`}>
+                            <img src={post.url} alt="" />
+                            {post.id}
+                        </Link>
                     </Item>
                 ))}
             </Ulist>
