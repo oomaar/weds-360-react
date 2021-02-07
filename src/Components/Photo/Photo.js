@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Footer, Jumbotron, Navbar } from '..';
+import { Footer, Jumbotron, Navbar, RelatedPhotos } from '..';
 import {
     Container,
     PhotoContainer,
@@ -58,6 +58,7 @@ const Photo = ({ match }) => {
                     </TextContainer>
                 </PhotoBox>
                 {/* Related Photos Container */}
+                <RelatedPhotos />
             </Container>
             <Jumbotron />
             <Footer />

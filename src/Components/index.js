@@ -6,3 +6,4 @@ export { default as Post } from "./Post/Post";
 export { default as Pagination } from "./Pagination/Pagination";
 export { default as Categories } from "./Categories/Categories";
 export { default as Photo } from "./Photo/Photo";
+export { default as RelatedPhotos } from "./RelatedPhotos/RelatedPhotos";
