@@ -5,18 +5,12 @@ export const Container = styled.div`
     justify-content: center;
     margin: 30px 0;
 
-    &.hide {
-        display: none;
-    }
-
     @media (max-width: 767px) {
-        /* Ipad */
         display: none;
     }
 `;
 
 export const RightBox = styled.div`
-     /* margin-left: auto; */
     display: flex;
     justify-content: space-around;
     align-self: center;
@@ -27,7 +21,6 @@ export const RightBox = styled.div`
 `;
 
 export const LeftBox = styled.div`
-    /* margin-right: auto; */
     display: flex;
     justify-content: space-around;
     align-self: center;
@@ -231,5 +224,3 @@ export const ScrollNav = styled.div`
         display: none;
     }
 `;
-
-export const ScrollNavContainer = styled.div``;

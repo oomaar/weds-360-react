@@ -17,8 +17,7 @@ import {
     Text,
     SmallContainer,
     SmallBox,
-    ScrollNav,
-    ScrollNavContainer
+    ScrollNav
 } from "./styles/styledNavbar";
 import { Link } from 'react-router-dom';
 
@@ -45,19 +44,17 @@ const Navbar = () => {
     return (
         <>
             {show && (
-                <ScrollNavContainer>
-                    <ScrollNav>
-                        <Logo src="/images/logo.png" alt="weds 360" />
-                        <Navlink>36 Planner</Navlink>
-                        <Navlink>Her</Navlink>
-                        <Navlink>Him</Navlink>
-                        <Navlink>The Wedding</Navlink>
-                        <Navlink>Vendors</Navlink>
-                        <Navlink>Gallery</Navlink>
-                        <Navlink>Ideas & more</Navlink>
-                    </ScrollNav>
-                </ScrollNavContainer>
-            )}
+                <ScrollNav>
+                    <Logo src="/images/logo.png" alt="weds 360" />
+                    <Navlink>36 Planner</Navlink>
+                    <Navlink>Her</Navlink>
+                    <Navlink>Him</Navlink>
+                    <Navlink>The Wedding</Navlink>
+                    <Navlink>Vendors</Navlink>
+                    <Navlink>Gallery</Navlink>
+                    <Navlink>Ideas & more</Navlink>
+                </ScrollNav>)}
+
             <Container>
                 <RightBox>
                     <Navlink>
