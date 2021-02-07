@@ -21,17 +21,15 @@ export const Ulist = styled.ul`
         padding: 7px;
         background-color: #fff;
         border: 1px solid #024d4c;
-        font-size: 13px;
+        font-size: clamp(11px, 1vw, 13px);
         width: 110px;
         height: 30px;
         cursor: pointer;
         color: #024d4c;
 
         @media (max-width: 990px) {
-            /* small screens */
             width: 80px;
             height: 20px;
-            font-size: 11px;
             display: flex;
             align-items: center;
         }
@@ -42,14 +40,12 @@ export const Ulist = styled.ul`
     }
 
     @media (max-width: 990px) {
-        /* mobile screens */
         border: none;
     }
 `;
 
 export const Item = styled.li`
     @media (max-width: 990px) {
-        /* small screens */
         font-size: 10px;
     }
 

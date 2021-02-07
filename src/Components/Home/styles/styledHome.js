@@ -3,22 +3,7 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
     max-width: 1100px;
     margin: 10px auto;
-
-    @media (max-width: 1200px) {
-        width: 900px;
-    }
-
-    @media (max-width: 990px) {
-        /* small screens */
-        width: 850px;
-    }
-
-    @media (max-width: 767px) {
-        /* Ipad */
-        width: 90%;
-        margin: auto;
-        padding: 20px;
-    }
+    width: clamp(80%, 20vw, 100%);
 `;
 
 export const TitleBox = styled.div`
@@ -52,7 +37,6 @@ export const HomeBox = styled.div`
     display: flex;
 
     @media (max-width: 767px) {
-        /* Ipad */
         flex-direction: column;
     }
 `;
@@ -63,7 +47,6 @@ export const SearchBox = styled.div`
     flex-direction: column;
 
     @media (max-width: 767px) {
-        /* Ipad */
         width: 90%;
     }
 `;
@@ -100,7 +83,6 @@ export const Input = styled.input`
     margin-top: 30px;
 
     @media (max-width: 767px) {
-        /* Ipad */
         margin-bottom: 30px;
     }
 `;
@@ -115,12 +97,10 @@ export const MainBox = styled.div`
     }
 
     @media (max-width: 990px) {
-        /* small screens */
         height: 100%;
     }
 
     @media (max-width: 767px) {
-        /* Ipad */
         width: 100%;
         display: flex;
         justify-content: center;

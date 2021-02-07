@@ -33,7 +33,7 @@ const Home = () => {
                 </SearchBox>
 
                 <MainBox>
-                <Post />
+                    <Post />
                 </MainBox>
             </HomeBox>
         </Container>

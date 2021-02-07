@@ -47,7 +47,7 @@ const Post = () => {
                     <Item key={post.id}>
                         <Link to={`/photo/${post.id}`}>
                             <img src={post.url} alt="" />
-                            {post.id}
+                            <h6>{post.id}</h6>
                         </Link>
                     </Item>
                 ))}
