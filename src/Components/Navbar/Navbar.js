@@ -17,8 +17,10 @@ import {
     Text,
     SmallContainer,
     SmallBox,
-    ScrollNav
+    ScrollNav,
+    ScrollNavContainer
 } from "./styles/styledNavbar";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [show, handleShow] = useState(false);
@@ -32,7 +34,7 @@ const Navbar = () => {
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
-            window.scrollY > 200 ? handleShow(true) : handleShow(false);
+            window.scrollY > 10 ? handleShow(true) : handleShow(false);
         });
 
         return () => {
@@ -42,44 +44,47 @@ const Navbar = () => {
 
     return (
         <>
-            {show ? (
-                <ScrollNav>
-                    <Logo src="/images/logo.png" alt="weds 360" />
-                    <Navlink>36 Planner</Navlink>
+            {show && (
+                <ScrollNavContainer>
+                    <ScrollNav>
+                        <Logo src="/images/logo.png" alt="weds 360" />
+                        <Navlink>36 Planner</Navlink>
+                        <Navlink>Her</Navlink>
+                        <Navlink>Him</Navlink>
+                        <Navlink>The Wedding</Navlink>
+                        <Navlink>Vendors</Navlink>
+                        <Navlink>Gallery</Navlink>
+                        <Navlink>Ideas & more</Navlink>
+                    </ScrollNav>
+                </ScrollNavContainer>
+            )}
+            <Container>
+                <RightBox>
+                    <Navlink>
+                        360 Planner
+                                    <Dropdown>
+                            <DropdownLink>Check List</DropdownLink>
+                            <DropdownLink>Budgeter</DropdownLink>
+                            <DropdownLink>Registry List</DropdownLink>
+                            <DropdownLink>Guest List</DropdownLink>
+                            <DropdownLink>Wedding Website</DropdownLink>
+                            <DropdownLink>Couple Website</DropdownLink>
+                            <DropdownLink>More</DropdownLink>
+                        </Dropdown>
+                    </Navlink>
                     <Navlink>Her</Navlink>
                     <Navlink>Him</Navlink>
                     <Navlink>The Wedding</Navlink>
+                </RightBox>
+                <Link to="/">
+                    <Logo src="/images/logo.png" alt="weds 360" />
+                </Link>
+                <LeftBox>
                     <Navlink>Vendors</Navlink>
                     <Navlink>Gallery</Navlink>
                     <Navlink>Ideas & more</Navlink>
-                </ScrollNav>
-            ) : ( 
-                    <Container className={`${show && 'hide'}`}>
-                        <RightBox>
-                            <Navlink>
-                                360 Planner
-                                    <Dropdown>
-                                    <DropdownLink>Check List</DropdownLink>
-                                    <DropdownLink>Budgeter</DropdownLink>
-                                    <DropdownLink>Registry List</DropdownLink>
-                                    <DropdownLink>Guest List</DropdownLink>
-                                    <DropdownLink>Wedding Website</DropdownLink>
-                                    <DropdownLink>Couple Website</DropdownLink>
-                                    <DropdownLink>More</DropdownLink>
-                                </Dropdown>
-                            </Navlink>
-                            <Navlink>Her</Navlink>
-                            <Navlink>Him</Navlink>
-                            <Navlink>The Wedding</Navlink>
-                        </RightBox>
-                        <Logo src="/images/logo.png" alt="weds 360" />
-                        <LeftBox>
-                            <Navlink>Vendors</Navlink>
-                            <Navlink>Gallery</Navlink>
-                            <Navlink>Ideas & more</Navlink>
-                        </LeftBox>
-                    </Container>
-                )}
+                </LeftBox>
+            </Container>
 
             <ResponsiveBox>
                 <Navlink>Link</Navlink>
@@ -88,7 +93,7 @@ const Navbar = () => {
                     <img onClick={showDiv} src="/images/responsive/burger.png" alt="burger toggle" />
                 </ResponsiveButton>
             </ResponsiveBox>
-            
+
             {showing.shows && (
                 <PopBox className={`${showing.shows && 'hide'}`}>
                     <Section>

@@ -8,7 +8,6 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     width: clamp(97%, 10vw, 1100px);
-    /* border: 2px solid red; */
 
     @media (max-width: 400px) {
         margin: 0;
@@ -147,15 +146,12 @@ export const WhiteBox = styled.div`
 
 export const WeddingBox = styled.div`
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), 
-    url('/images/wedding-ideas.jpeg');
-    background-position: center;
+    url('/images/wedding-ideas.jpeg') center;
     background-size: cover;
     width: 350px;
     height: 230px;
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: auto;
+    margin: 20px auto 0 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;

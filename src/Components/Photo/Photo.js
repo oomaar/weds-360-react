@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Footer, Jumbotron, Navbar } from '..';
 import {
     Container,
@@ -23,45 +24,41 @@ const Photo = ({ match }) => {
         const fetchItem = await fetch(`https://jsonplaceholder.typicode.com/photos/${match.params.id}`);
         const item = await fetchItem.json();
         setItem(item);
-        // console.log("item", item);
     }
 
     useEffect(() => {
         fetchItem();
-        // console.log("match", match);
     }, []);
 
     return (
         <>
             <Navbar />
-
-            <div>
+            <Container>
                 <TitleBox>
-                    <TitleLink href="/categories">Gallery</TitleLink>
+                    <Link to="/categories">
+                        <TitleLink>Gallery</TitleLink>
+                    </Link>
                     <img src="/images/icons/chevron-right.png" alt="chevron" />
                     <SubTitleLink>Wedding Ideas</SubTitleLink>
                     <img src="/images/icons/chevron-right.png" alt="chevron" />
                     <SubTitleLink>IRRESISTIBLE APPETIZERS’ CORNER</SubTitleLink>
                 </TitleBox>
-                <Container>
-                    <PhotoBox>
-                        <PhotoContainer>
-                            <img src={item.url} alt="" />
-                        </PhotoContainer>
-                        <TextContainer>
-                            <Title>{item.title}</Title>
-                            <SubTitle>Satisfy your guests with mouth-watering irresistible appetizers corner</SubTitle>
-                            <Name>Umai</Name>
-                            <SocialContainer>
-                                <SocialIcon src="/images/social/facebook-sm.png" alt="facebook" />
-                                <SocialIcon src="/images/social/twitter.png" alt="instagram" />
-                            </SocialContainer>
-                        </TextContainer>
-                    </PhotoBox>
-                    {/* Related Photos Container */}
-                </Container>
-            </div>
-
+                <PhotoBox>
+                    <PhotoContainer>
+                        <img src={item.url} alt="" />
+                    </PhotoContainer>
+                    <TextContainer>
+                        <Title>{item.title}</Title>
+                        <SubTitle>Satisfy your guests with mouth-watering irresistible appetizers corner</SubTitle>
+                        <Name>Umai</Name>
+                        <SocialContainer>
+                            <SocialIcon src="/images/social/facebook-sm.png" alt="facebook" />
+                            <SocialIcon src="/images/social/twitter.png" alt="instagram" />
+                        </SocialContainer>
+                    </TextContainer>
+                </PhotoBox>
+                {/* Related Photos Container */}
+            </Container>
             <Jumbotron />
             <Footer />
         </>

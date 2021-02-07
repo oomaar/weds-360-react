@@ -151,10 +151,9 @@ export const PopBox = styled.div`
     max-width: 767px;
     width: 100%;
     padding: 0;
-    animation: ${fade} 500ms cubic-bezier(0.39, -1.05, 0.58, 1.95);
-    animation-delay: -0.1s;
-    transform-origin: left top;
     z-index: 1;
+    transition: transform 100ms;
+    animation: ${fade} 250ms;
 
     @media (max-width: 767px) {
         display: flex;
@@ -177,7 +176,6 @@ export const LargeBox = styled.div`
     height: 140px;
     padding: 10px;
     
-
     img {
         margin-top: 10px;
         height: 50px;
@@ -215,7 +213,10 @@ export const ScrollNav = styled.div`
     background-color: white;
     width: 100%;
     display: flex;
-    margin-bottom: 20px;
+    top: 0;
+    transition: transform 100ms;
+    animation: ${fade} 250ms;
+    z-index: 1;
 
     ${Logo} {
         width: 60px;
@@ -227,7 +228,8 @@ export const ScrollNav = styled.div`
     }
     
     @media (max-width: 767px) {
-         /* Ipad */
         display: none;
     }
 `;
+
+export const ScrollNavContainer = styled.div``;

@@ -55,16 +55,20 @@ const Post = () => {
             <Ulist>
                 {currentPost.map(post => (
                     <Item key={post.id}>
-                        <img src={post.thumbnailUrl} alt={post.title} />
-                        <h6>{post.id}</h6>
+                        <Link to={`/photo/${post.id}`}>
+                            <img src={post.thumbnailUrl} alt={post.title} />
+                            <h6>{post.id}</h6>
+                        </Link>
                     </Item>
                 ))}
             </Ulist>
             <Ulist>
                 {currentPost.map(post => (
                     <Item key={post.id}>
-                        <img src={post.thumbnailUrl} alt={post.title} />
-                        <h6>{post.id}</h6>
+                        <Link to={`/photo/${post.id}`}>
+                            <img src={post.thumbnailUrl} alt={post.title} />
+                            <h6>{post.id}</h6>
+                        </Link>
                     </Item>
                 ))}
             </Ulist>
