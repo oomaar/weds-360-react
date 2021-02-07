@@ -27,6 +27,7 @@ export const TitleBox = styled.div`
 
     img {
         width: 20px;
+        height: 10px;
     }
 `;
 
