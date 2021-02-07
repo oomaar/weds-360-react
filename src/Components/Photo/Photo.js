@@ -1,4 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Footer, Jumbotron, Navbar } from '..';
+import {
+    Container,
+    PhotoContainer,
+    Title,
+    SubTitle
+} from "./styles/styledPhoto";
 
 const Photo = ({ match }) => {
     useEffect(() => {
@@ -16,12 +23,18 @@ const Photo = ({ match }) => {
     }
 
     return (
-        <div>
-            <div>
+        <Container>
+            <Navbar />
+            <PhotoContainer>
                 <img src={item.url} alt="" />
-                <h1>{item.title}</h1>
-            </div>
-        </div>
+                <Title>{item.title}</Title>
+                <SubTitle>Satisfy your guests with mouth-watering irresistible appetizers corner</SubTitle>
+                {/* Social icons: Facebook, Twitter */}
+            </PhotoContainer>
+            {/* Related Photos Container */}
+            <Jumbotron />
+            <Footer />
+        </Container>
     )
 }
 
