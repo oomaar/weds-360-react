@@ -31,8 +31,8 @@ const Categories = () => {
                 <Input type="text" placeholder="SEARCH" />
             </CategoriesBox>
 
-            {!category.cats && (
-                <SubContainer className={`${category.cats && 'hide'}`}>
+            {category.cats && (
+                <SubContainer className={`${!category.cats && 'hide'}`}>
                     <BlackBox>
                         <img src="/images/responsive/icons/360planner.png" alt="360 planner" />
                         <img src="/images/responsive/icons/him.png" alt="Him" />
