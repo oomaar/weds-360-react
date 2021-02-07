@@ -7,10 +7,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    @media (max-width: 990px) {
-        width: 97%;
-    }
+    width: clamp(97%, 10vw, 1100px);
+    /* border: 2px solid red; */
 
     @media (max-width: 400px) {
         margin: 0;
@@ -24,66 +22,47 @@ export const CategoriesBox = styled.div`
 `;
 
 export const DropDown = styled.div`
-    background-color: #fff;
-    color: #000;
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(11px, 1vw, 15px);
     font-weight: 700;
     text-transform: uppercase;
-    padding: 10px;
     width: 45%;
     text-align: center;
     cursor: pointer;
     border: 1px solid black;
     margin: 5px auto;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 45px;
     letter-spacing: 4.1px;
 
     img {
-        width: 30px;
+        width: clamp(20px, 1vw, 30px);
         margin: 0 20px;
-
-        @media (max-width: 767px) {
-            width: 20px;
-        }
 
         @media (max-width: 400px) {
             margin: 0;
         }
     }
 
-    @media (max-width: 990px) {
-        font-size: 11px;
-    }
-
     @media (max-width: 767px) {
         letter-spacing: 0px;
-        font-size: 11px;
     }
 `;
 
 export const Input = styled.input`
-    background-color: #fff;
-    color: #000;
-    font-size: 15px;
+    font-size: clamp(11px, 10vw, 15px);
     font-weight: 700;
     text-transform: uppercase;
     padding: 10px;
     width: 45%;
     border: 1px solid black;
     margin: 5px auto;
-    height: 40px;
+    height: 45px;
     letter-spacing: 4.1px;
-
-    @media (max-width: 990px) {
-        font-size: 11px;
-    }
 
     @media (max-width: 767px) {
         letter-spacing: 3px;
-        font-size: 10px;
     }
 `;
 
@@ -115,10 +94,11 @@ export const SubContainer = styled.div`
     background: #111;
     width: 95%;
     margin-bottom: 20px;
-    animation: ${fade} 500ms; 
+    animation: ${fade} 500ms;
 
     &.hide {
         display: none;
+        transition: transform 1s;
     }
 `;
 
@@ -130,38 +110,34 @@ export const BlackBox = styled.div`
     overflow-x: scroll;
 
     ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
+        width: 10px;
+        height: 10px;
+    }
 
-::-webkit-scrollbar-track {
-    border: 7px solid #232943;
-    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
-}
+    ::-webkit-scrollbar-track {
+        border: 7px solid #232943;
+        box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #5b5b5b;
-    border-radius: 30px;
-}
+    ::-webkit-scrollbar-thumb {
+        background: #5b5b5b;
+        border-radius: 30px;
+    }
 
     img {
-        width: 50px;
+        width: clamp(30px, 10vw, 50px);
         margin: 10px;
-
-        @media (max-width: 400px) {
-            width: 30px;
-        }
     }
 `;
 
 export const WhiteBox = styled.div`
+    display: none;
     background-color: #fff;
     width: 85%;
     position: absolute;
-    display: none;
     flex-direction: column;
     align-items: center;
-    animation: ${fade} 500ms;
+    transition: transform 1s;
 
     img {
         margin: 70px;
@@ -193,6 +169,7 @@ export const WeddingBox = styled.div`
     &:hover {
         ${WhiteBox} {
             display: flex;
+            animation: ${fade} 500ms;
         }
     }
 
