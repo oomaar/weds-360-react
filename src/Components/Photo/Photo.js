@@ -4,7 +4,11 @@ import {
     Container,
     PhotoContainer,
     Title,
-    SubTitle
+    SubTitle,
+    SocialIcon,
+    Name,
+    PhotoBox,
+    TextContainer
 } from "./styles/styledPhoto";
 
 const Photo = ({ match }) => {
@@ -23,18 +27,29 @@ const Photo = ({ match }) => {
     }
 
     return (
-        <Container>
+        <>
             <Navbar />
-            <PhotoContainer>
-                <img src={item.url} alt="" />
-                <Title>{item.title}</Title>
-                <SubTitle>Satisfy your guests with mouth-watering irresistible appetizers corner</SubTitle>
-                {/* Social icons: Facebook, Twitter */}
-            </PhotoContainer>
-            {/* Related Photos Container */}
+            
+            <Container>
+                <PhotoBox>
+                    <PhotoContainer>
+                        <img src={item.url} alt="" />
+                    </PhotoContainer>
+                    <TextContainer>
+                        <Title>{item.title}</Title>
+                        <SubTitle>Satisfy your guests with mouth-watering irresistible appetizers corner</SubTitle>
+                        {/* Social icons: Facebook, Twitter */}
+                        <Name>Umai</Name>
+                        <SocialIcon src="/images/social/facebook.png" alt="facebook" />
+                        <SocialIcon src="/images/social/twitter.png" alt="instagram" />
+                    </TextContainer>
+                </PhotoBox>
+                {/* Related Photos Container */}
+            </Container>
+
             <Jumbotron />
             <Footer />
-        </Container>
+        </>
     )
 }
 

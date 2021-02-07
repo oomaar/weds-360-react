@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Photo } from './Components';
+import { Footer, Jumbotron, Navbar, Photo } from './Components';
 import CategoriesPage from './Pages/CategoriesPage';
 import HomePage from './Pages/HomePage';
 
