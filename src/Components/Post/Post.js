@@ -12,13 +12,13 @@ const Post = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(3);
+    const [postsPerPage] = useState(9);
 
     useEffect(() => {
         const fetchPost = async () => {
             setLoading(true);
             const res = await axios.get('https://jsonplaceholder.typicode.com/photos');
-            setPosts(res.data.slice(0, 40));
+            setPosts(res.data.slice(0, 120));
             setLoading(false);
         }
 
@@ -47,26 +47,6 @@ const Post = () => {
                     <Item key={post.id}>
                         <Link to={`/photo/${post.id}`}>
                             <img src={post.url} alt="" />
-                            <h6>{post.id}</h6>
-                        </Link>
-                    </Item>
-                ))}
-            </Ulist>
-            <Ulist>
-                {currentPost.map(post => (
-                    <Item key={post.id}>
-                        <Link to={`/photo/${post.id}`}>
-                            <img src={post.thumbnailUrl} alt={post.title} />
-                            <h6>{post.id}</h6>
-                        </Link>
-                    </Item>
-                ))}
-            </Ulist>
-            <Ulist>
-                {currentPost.map(post => (
-                    <Item key={post.id}>
-                        <Link to={`/photo/${post.id}`}>
-                            <img src={post.thumbnailUrl} alt={post.title} />
                             <h6>{post.id}</h6>
                         </Link>
                     </Item>

@@ -12,9 +12,14 @@ export const Container = styled.div`
 
 export const Ulist = styled.ul`
     list-style-type: none;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 990px) {
+        grid-template-columns: 1fr 1fr;
+    }
 `;
+
 export const Item = styled.li`
     img {
         margin: 10px;
