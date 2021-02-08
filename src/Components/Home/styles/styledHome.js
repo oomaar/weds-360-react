@@ -90,11 +90,6 @@ export const Input = styled.input`
 export const MainBox = styled.div`
     flex: 0.7;
     height: 1100px;
-    
-    img {
-        width: 1000px;
-        cursor: pointer;
-    }
 
     @media (max-width: 990px) {
         height: 100%;

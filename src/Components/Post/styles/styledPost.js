@@ -23,7 +23,7 @@ export const Ulist = styled.ul`
 export const Item = styled.li`
     img {
         margin: 10px;
-        width: clamp(80px, 10vw, 230px);
+        width: clamp(80px, 20vw, 230px);
     }
     
     &.link__block {
