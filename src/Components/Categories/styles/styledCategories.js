@@ -169,7 +169,7 @@ export const WeddingBox = styled.div`
         }
     }
 
-    @media (max-width: 770px) {
+    @media (max-width: 700px) {
             width: 80%;
     }
 `;
