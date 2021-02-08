@@ -36,7 +36,7 @@ export const HomeBox = styled.div`
     margin: 50px auto;
     display: flex;
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         flex-direction: column;
     }
 `;
@@ -46,7 +46,7 @@ export const SearchBox = styled.div`
     display: flex;
     flex-direction: column;
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         width: 90%;
     }
 `;
@@ -82,7 +82,7 @@ export const Input = styled.input`
     padding: 5px;
     margin-top: 30px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         margin-bottom: 30px;
     }
 `;
@@ -100,7 +100,7 @@ export const MainBox = styled.div`
         height: 100%;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         width: 100%;
         display: flex;
         justify-content: center;

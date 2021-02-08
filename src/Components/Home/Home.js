@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <Container>
             <TitleBox>
-                <Title href="/categories">Gallery</Title>
+                <Title href="/categories">CATEGORIES</Title>
                 <img src="/images/icons/chevron-right.png" alt="chevron" />
                 <SubTitle>Wedding Ideas</SubTitle>
             </TitleBox>

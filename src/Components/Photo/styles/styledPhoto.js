@@ -12,41 +12,57 @@ export const Container = styled.div`
         width: 850px;
     } 
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         width: 90%;
         margin: auto;
         padding: 20px;
+    }
+
+    @media (max-width: 400px) {
+        padding: 0;
     }
 `;
 
 export const TitleBox = styled.div`
     max-width: 1100px;
+    height: 100px;
     margin: 10px;
     display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: clamp(80%, 80vw, 100%);
+    
+    @media (max-width: 400px) {
+        flex-direction: column;
+        margin: 5px;
+    }
+`;
+
+export const TitleBoxTwo = styled.div`
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: clamp(80%, 2vw, 100%);
 
     img {
         width: 20px;
-        height: 10px;
     }
 `;
-export const TitleLink = styled.h1`
+
+export const TitleLink = styled.p`
     color: #008174;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 20px;
-    font-weight: 700;
+    font-weight: 800;
     margin: 0 20px 0 0;
     text-decoration: none;
-    font-size: clamp(18px, 1vw, 20px);
+    font-size: clamp(18px, 10vw, 20px);
 `;
 
 export const SubTitleLink = styled.h1`
     text-transform: uppercase;
     font-size: 18px;
+    font-weight: 700;
     margin: 0 20px;
-    font-size: clamp(10px, 1vw, 18px);
+    font-size: clamp(10px, 10vw, 18px);
 `;
 
 export const PhotoBox = styled.div`
@@ -58,7 +74,7 @@ export const PhotoBox = styled.div`
         width: 90%;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         flex-direction: column;
         width: 100%;
     }
@@ -78,7 +94,7 @@ export const TextContainer = styled.div`
     flex-direction: column;
     margin-left: 14px; 
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         justify-content: center;
         align-items: center;
     }

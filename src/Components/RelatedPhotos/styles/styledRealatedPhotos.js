@@ -12,7 +12,7 @@ export const RelatedPhotosContainer = styled.div`
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         grid-template-columns: 1fr 1fr;
     }
 `;

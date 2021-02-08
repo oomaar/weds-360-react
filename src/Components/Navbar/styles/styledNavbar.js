@@ -5,7 +5,7 @@ export const Container = styled.div`
     justify-content: center;
     margin: 30px 0;
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         display: none;
     }
 `;
@@ -98,7 +98,7 @@ export const ResponsiveBox = styled.div`
         width: 50px;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         display: flex;
         justify-content: space-around;
     }
@@ -148,7 +148,7 @@ export const PopBox = styled.div`
     transition: transform 100ms;
     animation: ${fade} 250ms;
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         display: flex;
     }
 `;
@@ -220,7 +220,7 @@ export const ScrollNav = styled.div`
         margin: 20px;
     }
     
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         display: none;
     }
 `;

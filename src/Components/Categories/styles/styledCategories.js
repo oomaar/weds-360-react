@@ -44,7 +44,7 @@ export const DropDown = styled.div`
         }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         letter-spacing: 0px;
     }
 `;
@@ -60,7 +60,7 @@ export const Input = styled.input`
     height: 45px;
     letter-spacing: 4.1px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
         letter-spacing: 3px;
     }
 `;
@@ -169,7 +169,7 @@ export const WeddingBox = styled.div`
         }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 770px) {
             width: 80%;
     }
 `;

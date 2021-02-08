@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Footer, Jumbotron, Navbar, RelatedPhotos } from '..';
 import {
     Container,
@@ -11,10 +10,10 @@ import {
     PhotoBox,
     TextContainer,
     SocialContainer,
-    Div,
     TitleBox,
     TitleLink,
     SubTitleLink,
+    TitleBoxTwo
 } from "./styles/styledPhoto";
 
 const Photo = ({ match }) => {
@@ -35,13 +34,15 @@ const Photo = ({ match }) => {
             <Navbar />
             <Container>
                 <TitleBox>
-                    <Link to="/categories">
-                        <TitleLink>Gallery</TitleLink>
-                    </Link>
-                    <img src="/images/icons/chevron-right.png" alt="chevron" />
-                    <SubTitleLink>Wedding Ideas</SubTitleLink>
-                    <img src="/images/icons/chevron-right.png" alt="chevron" />
-                    <SubTitleLink>IRRESISTIBLE APPETIZERS’ CORNER</SubTitleLink>
+                    <TitleBoxTwo>
+                            <TitleLink>Gallery</TitleLink>
+                        <img src="/images/icons/chevron-right.png" alt="chevron" />
+                        <SubTitleLink>Wedding Ideas</SubTitleLink>
+                        <img src="/images/icons/chevron-right.png" alt="chevron" />
+                    </TitleBoxTwo>
+                    <TitleBoxTwo>
+                        <SubTitleLink>IRRESISTIBLE APPETIZERS’ CORNER</SubTitleLink>
+                    </TitleBoxTwo>
                 </TitleBox>
                 <PhotoBox>
                     <PhotoContainer>
@@ -57,7 +58,6 @@ const Photo = ({ match }) => {
                         </SocialContainer>
                     </TextContainer>
                 </PhotoBox>
-                {/* Related Photos Container */}
                 <RelatedPhotos />
             </Container>
             <Jumbotron />
