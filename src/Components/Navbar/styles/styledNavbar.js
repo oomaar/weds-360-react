@@ -5,7 +5,7 @@ export const Container = styled.div`
     justify-content: center;
     margin: 30px 0;
 
-    @media (max-width: 770px) {
+    @media (max-width: 700px) {
         display: none;
     }
 `;
@@ -98,7 +98,7 @@ export const ResponsiveBox = styled.div`
         width: 50px;
     }
 
-    @media (max-width: 770px) {
+    @media (max-width: 700px) {
         display: flex;
         justify-content: space-around;
     }
@@ -220,7 +220,7 @@ export const ScrollNav = styled.div`
         margin: 20px;
     }
     
-    @media (max-width: 770px) {
+    @media (max-width: 700px) {
         display: none;
     }
 `;
