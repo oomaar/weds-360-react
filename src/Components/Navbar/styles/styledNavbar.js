@@ -43,12 +43,13 @@ export const DropdownLink = styled.a`
 export const Dropdown = styled.div`
     display: none;
     position: absolute;
-    top: 31px;
+    top: 28px;
     left: 0;
     text-align: center;
     width: 100px;
     background-color: #fff;
-    box-shadow: 1px 1px 1px 1px #000;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+    z-index: 9999;
 
     ${DropdownLink} {
     cursor: pointer;

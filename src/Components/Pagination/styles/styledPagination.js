@@ -10,11 +10,11 @@ export const Ulist = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #024d4c;
+    /* border: 1px solid #024d4c;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px; */
     margin: auto;
     
     button {
@@ -39,9 +39,9 @@ export const Ulist = styled.ul`
         }
     }
 
-    @media (max-width: 990px) {
-        border: none;
-    }
+        @media (max-width: 990px) {
+            border: none;
+        }
 `;
 
 export const Item = styled.li`
