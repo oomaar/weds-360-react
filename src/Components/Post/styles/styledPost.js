@@ -1,9 +1,17 @@
 import styled from "styled-components/macro";
 
 export const Container = styled.div`
-    width: clamp(500px, 25vw, 600px);
-    margin: 0;
-    padding: 0;
+    @media (max-width: 990px) {
+        width: 500px;
+    }
+
+    @media (max-width: 640px) {
+        width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+    }
 `;
 
 export const Ulist = styled.ul`
