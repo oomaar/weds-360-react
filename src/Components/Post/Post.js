@@ -1,71 +1,123 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { range } from "lodash";
 import axios from "axios";
 import {
     Container,
+    PostContainer,
     Ulist,
     Item,
+    PaginationContainer,
+    PageNumBtn,
+    NextAndPreviousBtn,
 } from "./styles/styledPost";
-import { Pagination } from '..';
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Post = () => {
+export default function Paginations() {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(9);
 
     useEffect(() => {
         const fetchPost = async () => {
             setLoading(true);
             const res = await axios.get('https://jsonplaceholder.typicode.com/photos');
-            setPosts(res.data.slice(0, 120));
+            setPosts(res.data);
             setLoading(false);
         }
 
         fetchPost();
     }, []);
-    // console.log(posts);
-    loading && <h2>Spinner</h2>;
+
+    loading && <h2>Spinner...</h2>;
+
+    const numberOfPages = range(1, 101);
+    const [currentPage, setCurrentPage] = useState(1);
+    const visibleCount = 9;
+
+    const getSliceStart = () => {
+        if (range(0, Math.ceil(visibleCount / 2)).includes(currentPage)) {
+            return numberOfPages[0] - 1;
+        } else if (
+            range(
+                numberOfPages.length - Math.floor(visibleCount / 2),
+                numberOfPages.length + 1
+            ).includes(currentPage)
+        ) {
+            return numberOfPages[numberOfPages.length - 1 - visibleCount];
+        } else {
+            return currentPage - Math.ceil(visibleCount / 2);
+        }
+    };
+
+    const getSliceEnd = () => {
+        if (
+            range(
+                numberOfPages.length - Math.floor(visibleCount / 2),
+                numberOfPages.length + 1
+            ).includes(currentPage)
+        ) {
+            return numberOfPages[numberOfPages.length - 1];
+        } else if (range(0, Math.ceil(visibleCount / 2)).includes(currentPage)) {
+            return visibleCount;
+        } else {
+            return currentPage + Math.floor(visibleCount / 2);
+        }
+    };
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
-    const indexOfLastPage = Math.ceil(posts.length / postsPerPage) - 1;
-
-    let prevPage = currentPage - 1;
-    let nextPage = currentPage + 1;
-
-    // Pagination
-    const paginate = (number) => setCurrentPage(number);
-    const paginatePrev = (number) => setCurrentPage(number);
-    const paginateNext = (number) => setCurrentPage(number);
 
     return (
         <Container>
-            <Ulist>
-                {currentPost.map(post => (
-                    <Item key={post.id}>
-                        <Link to={`/photo/${post.id}`}>
-                            <img src={post.url} alt="" />
+            <Container>
+                <Ulist>
+                    {currentPost.map(post => (
+                        <Item key={post.id}>
+                            <Link to={`/photo/${post.id}`}>
+                                <img src={post.url} alt="" />
+                            </Link>
                             <h6>{post.id}</h6>
-                        </Link>
-                    </Item>
+                        </Item>
+                    ))}
+                </Ulist>
+            </Container>
+
+            <PaginationContainer>
+                <NextAndPreviousBtn
+                    onClick={() =>
+                        setCurrentPage(currentPage > 1 ? currentPage - 1 : currentPage)
+                    }>
+                    ← Prev
+                </NextAndPreviousBtn>
+                {currentPage - 1 > Math.ceil(visibleCount / 2) && (
+                    <PageNumBtn>
+                        ...
+                    </PageNumBtn>
+                )}
+                {numberOfPages.slice(getSliceStart(), getSliceEnd()).map((number) => (
+                    <PageNumBtn
+                        onClick={() => setCurrentPage(number)}
+                        className={`${currentPage === number && 'active'}`}>
+                        {number}
+                    </PageNumBtn>
                 ))}
-            </Ulist>
-
-            <Pagination
-                postsPerPage={postsPerPage}
-                posts={posts}
-                paginate={paginate}
-                paginatePrev={paginatePrev}
-                paginateNext={paginateNext}
-                indexOfLastPage={indexOfLastPage}
-                currentPage={currentPage}
-                prevPage={prevPage}
-                nextPage={nextPage}
-            />
+                {currentPage <
+                    numberOfPages[numberOfPages.length - 1] -
+                    Math.floor(visibleCount / 2) && (
+                        <PageNumBtn>
+                            ...
+                        </PageNumBtn>
+                    )}
+                <NextAndPreviousBtn
+                    onClick={() =>
+                        setCurrentPage(
+                            currentPage < numberOfPages.length ? currentPage + 1 : currentPage
+                        )
+                    }>
+                    Next →
+                </NextAndPreviousBtn>
+            </PaginationContainer>
         </Container>
-    )
+    );
 }
-
-export default Post;
